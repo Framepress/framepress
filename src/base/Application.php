@@ -3,7 +3,7 @@
 namespace Framepress\base;
 
 class Application {
-	private static $_instance;
+	protected static $_instance;
 	private $container;
 	protected function __construct() {
 		$this->container = new \League\Container\Container ();
@@ -19,7 +19,8 @@ class Application {
 	private function __wakeup() {
 	}
 	public function __get($var) {
-		return self::getInstance ()->container->get ( $var );
+		if (self::getInstance ()->container->has ( $var ))
+			return self::getInstance ()->container->get ( $var );
 	}
 	public static function getInstance() {
 		if (! static::$_instance instanceof self) {
