@@ -2,5 +2,10 @@
 
 namespace Framepress\shortcodes;
 
-class Shortcodes {
+/**
+ *
+ * @author grayfolk
+ *        
+ */
+abstract class Shortcodes {
 }
