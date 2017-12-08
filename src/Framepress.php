@@ -2,18 +2,30 @@
 
 namespace Framepress;
 
+use Framepress\controllers\Common;
+use Framepress\controllers\Front;
+use Framepress\controllers\Admin;
+
 /**
  *
  * @author grayfolk
  *        
  */
 class Framepress {
+	CONST FRONT_SHORTCODES_FOLDER = 'shortcodes';
 	public static $app;
 	public static $id;
-	private static $config;
+	public static $appPath;
+	public static $config;
 	function __construct(array $config = []) {
 		$this->parseConfig ( $config );
 		self::$app = \Framepress\base\Application::init ();
+		new Common ();
+		if (! is_admin ()) {
+			new Front ();
+		} else {
+			new Admin ();
+		}
 	}
 	public function __get($var) {
 		if (! empty ( self::$config [$var] ))
@@ -23,5 +35,7 @@ class Framepress {
 		self::$config = $config;
 		if (! empty ( $config ['id'] ))
 			self::$id = $config ['id'];
+		if (! empty ( $config ['appPath'] ))
+			self::$appPath = $config ['appPath'];
 	}
 }

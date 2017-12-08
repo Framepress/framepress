@@ -628,7 +628,7 @@ class Query {
 	}
 	protected function type($type) {
 		if ($this->type && $this->type !== $type) {
-			throw new Exception ( "The type of query is already '{$this->type}'" );
+			throw new \Exception ( "The type of query is already '{$this->type}'" );
 		}
 		$this->type = $type;
 		return $this;
@@ -642,7 +642,7 @@ class Query {
 						$column 
 				];
 			} elseif (! is_array ( $column )) {
-				throw new Exception ( 'Only one argument provided for function where, but this is not an string or array.' );
+				throw new \Exception ( 'Only one argument provided for function where, but this is not an string or array.' );
 			} elseif (array_key_exists ( 0, $column )) {
 				$obj = $column;
 			} else {
