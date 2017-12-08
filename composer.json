@@ -1,0 +1,26 @@
+{
+    "name": "Framepress",
+    "homepage": "https://github.com/Framepress/framepress",
+    "license": "MIT",
+    "authors" : [
+        {
+            "name": "Vladymyr Protsenko",
+            "email": "grayfolk@gmail.com",
+            "role": "Author"
+        }
+    ],
+    "require": {
+	    "php": ">=5.4.0",
+	    "league/plates": "3.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "squizlabs/php_codesniffer": "*"
+    },
+	"autoload": {
+		"psr-4": {
+			"Framepress\\": "src"
+		}
+	},
+	"extra": {}
+}
