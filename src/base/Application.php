@@ -2,12 +2,17 @@
 
 namespace Framepress\base;
 
+use Framepress\Framepress;
+
 class Application {
 	protected static $_instance;
 	private $container;
 	protected function __construct() {
 		$this->container = new \League\Container\Container ();
-		$this->container->add ( 'view', 'League\Plates\Engine' );
+		$this->container->add ( 'view', new \League\Plates\Engine ( implode ( DS, [ 
+				Framepress::$appPath,
+				'views' 
+		] ) ) );
 	}
 	public static function init() {
 		return self::getInstance ();

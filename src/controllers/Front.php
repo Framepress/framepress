@@ -4,6 +4,10 @@ namespace Framepress\controllers;
 
 use Framepress\Framepress;
 
+/**
+ * @author grayfolk
+ *
+ */
 class Front {
 	private $shortcodes = [ ];
 	public function __construct() {

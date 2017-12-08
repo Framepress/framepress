@@ -9,7 +9,7 @@ use Framepress\Framepress;
  * @author grayfolk
  *        
  */
-abstract class Shortcodes {
+abstract class Shortcodes extends Base {
 	public $args;
 	abstract function init();
 	public function __construct() {

@@ -18,10 +18,12 @@ class Framepress {
 	public static $appPath;
 	public static $config;
 	function __construct(array $config = []) {
+		defined ( 'DS' ) or define ( 'DS', DIRECTORY_SEPARATOR );
 		$this->parseConfig ( $config );
 		self::$app = \Framepress\base\Application::init ();
 		new Common ();
 		if (! is_admin ()) {
+			
 			new Front ();
 		} else {
 			new Admin ();
