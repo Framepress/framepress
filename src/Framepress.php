@@ -8,7 +8,7 @@ namespace Framepress;
  *        
  */
 class Framepress {
-	protected $_options;
-	public function __construct() {
+	protected $_config;
+	public function __construct(array $config = []) {
 	}
 }
