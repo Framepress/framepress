@@ -11,6 +11,7 @@ use Framepress\Framepress;
  */
 abstract class Shortcodes extends Base {
 	public $args;
+	public $disabled = false;
 	abstract function init();
 	public function __construct() {
 		add_shortcode ( $this->getShortcode (), function ($args) {

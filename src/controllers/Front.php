@@ -5,8 +5,9 @@ namespace Framepress\controllers;
 use Framepress\Framepress;
 
 /**
- * @author grayfolk
  *
+ * @author grayfolk
+ *        
  */
 class Front {
 	private $shortcodes = [ ];
@@ -34,13 +35,11 @@ class Front {
 			return;
 		foreach ( $this->shortcodes as $file ) {
 			$class = str_ireplace ( '/', '\\', "\\app\\shortcodes\\" . $file );
-			/* if (is_callable ( [ 
-					$class,
-					'init' 
-			] )) {
-				(new $class ())->init ();
-			} */
-			new $class ();
+			if (class_exists ( $class )) {
+				$props = get_class_vars ( $class );
+				if (! array_key_exists ( 'disabled', $props ) || $props ['disabled'] === false)
+					new $class ();
+			}
 		}
 	}
 }
