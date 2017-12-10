@@ -11,6 +11,8 @@
     ],
     "require": {
 	    "php": ">=5.4.0",
+	    "league/container": "*",
+	    "league/route": "3.*",
 	    "league/plates": "3.*"
     },
     "require-dev": {
