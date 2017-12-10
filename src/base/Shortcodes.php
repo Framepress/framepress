@@ -9,7 +9,7 @@ use Framepress\Framepress;
  * @author grayfolk
  *        
  */
-abstract class Shortcodes extends Base {
+abstract class Shortcodes extends Controller {
 	public $args;
 	public $disabled = false;
 	abstract function init();

@@ -13,4 +13,6 @@ abstract class Base {
 	public function render($view) {
 		return Framepress::$app->view->render ( $view );
 	}
+	protected function callMethod($class, $method) {
+	}
 }

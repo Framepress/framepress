@@ -17,6 +17,7 @@ class Framepress {
 	CONST FRONT_SHORTCODES_FOLDER = 'shortcodes';
 	public static $app;
 	public static $id;
+	public static $path;
 	public static $appPath;
 	public static $config = [ 
 			'id' => 'framepress-app',
@@ -45,6 +46,7 @@ class Framepress {
 			return self::$config [$var];
 	}
 	private function parseConfig($config) {
+		self::$path = __DIR__;
 		self::$config ['appPath'] = dirname ( dirname ( dirname ( dirname ( __DIR__ ) ) ) );
 		self::$config = array_merge ( self::$config, $config );
 		if (! empty ( $config ['id'] ))
