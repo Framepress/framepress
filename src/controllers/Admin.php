@@ -3,9 +3,9 @@
 namespace Framepress\controllers;
 
 use Framepress\Framepress;
-use Framepress\base\Base;
+use Framepress\base\Controller;
 
-class Admin extends Base {
+class Admin extends Controller {
 	private $pages = 0;
 	public function __construct() {
 		if (Framepress::$config ['admin'] ['createDefaultOptionsPage'] === true) {
@@ -13,7 +13,7 @@ class Admin extends Base {
 		}
 		if ($this->pages > 0)
 			add_action ( 'admin_menu', function () {
-				add_menu_page ( __ ( 'Framepress', Framepress::$id ), __ ( 'Framepress', Framepress::$id ), 'manage_options', Framepress::$id, function () {
+				add_menu_page ( __ ( Framepress::$appName, Framepress::$id ), __ ( Framepress::$appName, Framepress::$id ), 'manage_options', Framepress::$id, function () {
 				}, '', 56 );
 				if (Framepress::$config ['admin'] ['createDefaultOptionsPage'] === true) {
 					$this->createDefaultSettingsPage ();
@@ -22,8 +22,7 @@ class Admin extends Base {
 			} );
 	}
 	public function runSettingsPage() {
-		$obj = '\\Framepress\controllers\admin\\Settings';
-		echo (new $obj ())->{'actionIndex'} ();
+		return $this->run ( '\\Framepress\controllers\admin\\Settings' );
 	}
 	private function createDefaultSettingsPage() {
 		Framepress::$app->view->addFolder ( '__admin', implode ( DS, [ 
@@ -32,7 +31,7 @@ class Admin extends Base {
 				'admin',
 				'views' 
 		] ) );
-		add_submenu_page ( Framepress::$id, __ ( 'Framepress Settings', Framepress::$id ), __ ( 'Settings', Framepress::$id ), 'manage_options', Framepress::$id . '/settings', [ 
+		add_submenu_page ( Framepress::$id, __ ( Framepress::$appName . ' Settings', Framepress::$id ), __ ( 'Settings', Framepress::$id ), 'manage_options', Framepress::$id . '/settings', [ 
 				$this,
 				'runSettingsPage' 
 		] );

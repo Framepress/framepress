@@ -2,9 +2,9 @@
 
 namespace Framepress\controllers;
 
-use Framepress\base\Base;
+use Framepress\base\Controller;
 
-class Common extends Base {
+class Common extends Controller {
 	public function __construct() {
 	}
 }

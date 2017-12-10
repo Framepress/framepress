@@ -3,14 +3,14 @@
 namespace Framepress\controllers;
 
 use Framepress\Framepress;
-use Framepress\base\Base;
+use Framepress\base\Controller;
 
 /**
  *
  * @author grayfolk
  *        
  */
-class Front extends Base {
+class Front extends Controller {
 	private $shortcodes = [ ];
 	public function __construct() {
 		$this->findShortcodes ();
