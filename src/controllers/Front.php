@@ -38,7 +38,7 @@ class Front extends Controller {
 			$class = str_ireplace ( '/', '\\', "\\app\\shortcodes\\" . $file );
 			if (class_exists ( $class )) {
 				$props = get_class_vars ( $class );
-				if (! array_key_exists ( 'disabled', $props ) || $props ['disabled'] === false)
+				if (! array_key_exists ( 'disabled', $props ) || $props ['disabled'] !== true)
 					new $class ();
 			}
 		}

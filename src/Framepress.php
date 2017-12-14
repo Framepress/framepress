@@ -52,6 +52,10 @@ class Framepress {
 			'id' => 'framepress-app',
 			'appPath' => '',
 			'appName' => 'Framepress',
+			'plugins' => [ 
+					'required' => [ ],
+					'optionally' => [ ] 
+			],
 			'common' => [ ],
 			'front' => [ 
 					'shortcodesFolder' => 'shortcodes' 
