@@ -3,7 +3,7 @@
 namespace Framepress\controllers;
 
 use Framepress\Framepress;
-use Framepress\base\Controller;
+use Framepress\components\Controller;
 
 /**
  *

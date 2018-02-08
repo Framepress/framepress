@@ -27,7 +27,7 @@ class Framepress {
 	 *
 	 * @var string
 	 */
-	public static $id;
+	public static $id = 'framepress-app';
 	/**
 	 *
 	 * @var string

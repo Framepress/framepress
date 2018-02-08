@@ -1,6 +1,6 @@
 <?php
 
-namespace Framepress;
+namespace Framepress\base;
 
 defined ( 'DS' ) or define ( 'DS', DIRECTORY_SEPARATOR );
 
@@ -27,8 +27,9 @@ class Application {
 		}
 	}
 	public function __get($var) {
-		if (self::getInstance ()->container->has ( $var ))
-			return self::getInstance ()->container->get ( $var );
+		if ($this->container->has ( $var ))
+			return $this->container->get ( $var );
+		return null;
 	}
 	/**
 	 *

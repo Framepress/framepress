@@ -3,22 +3,21 @@
 namespace Framepress\controllers;
 
 use Framepress\Framepress;
-use Framepress\base\Controller;
+use Framepress\components\Controller;
 use Framepress\helpers\Plugins;
 
 class Admin extends Controller {
-	private $pages = 0;
+	private $pagesCount = 0;
 	public function __construct() {
 		$this->runSetup ();
 		add_action ( 'admin_init', function () {
 			Plugins::checkPlugins ();
 		} );
 		if (Framepress::$config ['admin'] ['createDefaultOptionsPage'] === true) {
-			$this->pages ++;
+			$this->pagesCount ++;
 		}
-		if ($this->pages > 0)
+		if ($this->pagesCount > 0)
 			add_action ( 'admin_menu', function () {
-				
 				add_menu_page ( __ ( Framepress::$appName, Framepress::$id ), __ ( Framepress::$appName, Framepress::$id ), 'manage_options', Framepress::$id, function () {
 				}, '', 56 );
 				if (Framepress::$config ['admin'] ['createDefaultOptionsPage'] === true) {

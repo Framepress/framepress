@@ -1,6 +1,6 @@
 <?php
 
-namespace Framepress\base;
+namespace Framepress\components;
 
 use Framepress\Framepress;
 
