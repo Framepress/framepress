@@ -10,8 +10,13 @@ use Framepress\Framepress;
  *        
  */
 abstract class Base {
-	public function render($view) {
-		return Framepress::$app->view->render ( $view );
+	/**
+	 *
+	 * @param string $view        	
+	 * @param array $args        	
+	 */
+	public function render($view, $args = []) {
+		return Framepress::$app->view->render ( $view, $args );
 	}
 	/**
 	 *
@@ -39,7 +44,7 @@ abstract class Base {
 	 * @param string $class        	
 	 * @param string $action        	
 	 */
-	protected function run($class, $action = 'actionIndex') {
+	protected function run($class, $action = 'actionIndex', $args = []) {
 		echo (new $class ())->{$action} ();
 	}
 }

@@ -602,8 +602,9 @@ class Query {
 		}
 		
 		$modelClass = $this->model;
-		$result = static::wpdb ()->get_row ( $this->sql (), ARRAY_A );
-		return new $modelClass ( $result );
+		if ($result = static::wpdb ()->get_row ( $this->sql (), ARRAY_A ))
+			return new $modelClass ( $result );
+		return null;
 	}
 	
 	/**
