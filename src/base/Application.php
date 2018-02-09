@@ -36,8 +36,8 @@ class Application {
 	 * @param array $config        	
 	 */
 	private function parseConfig(array $config) {
-		Framepress::$path = __DIR__;
-		Framepress::$config ['appPath'] = dirname ( dirname ( dirname ( dirname ( __DIR__ ) ) ) );
+		Framepress::$path = dirname ( __DIR__ );
+		Framepress::$appPath = dirname ( dirname ( dirname ( dirname ( dirname ( __DIR__ ) ) ) ) );
 		Framepress::$config = array_merge ( Framepress::$config, $config );
 		if (! empty ( $config ['id'] ))
 			Framepress::$id = $config ['id'];

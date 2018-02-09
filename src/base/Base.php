@@ -22,6 +22,13 @@ abstract class Base {
 	 *
 	 * @return boolean
 	 */
+	protected function isGet() {
+		return $_SERVER ['REQUEST_METHOD'] == 'GET';
+	}
+	/**
+	 *
+	 * @return boolean
+	 */
 	protected function isPost() {
 		return $_SERVER ['REQUEST_METHOD'] == 'POST';
 	}

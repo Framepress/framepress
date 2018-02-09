@@ -44,7 +44,6 @@ class Framepress {
 	 */
 	public static $config = [ 
 			'id' => 'framepress-app',
-			'appPath' => '',
 			'appName' => 'Framepress',
 			'plugins' => [ 
 					'required' => [ ],
@@ -55,7 +54,7 @@ class Framepress {
 					'shortcodesFolder' => 'shortcodes' 
 			],
 			'admin' => [ 
-					'createDefaultOptionsPage' => true 
+					'createDefaultSettingsPage' => true 
 			],
 			'cli' => [ ] 
 	];
