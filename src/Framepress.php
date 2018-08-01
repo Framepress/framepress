@@ -10,7 +10,7 @@ namespace Framepress;
 class Framepress {
 	/**
 	 *
-	 * @var unknown
+	 * @var string
 	 */
 	CONST FRONT_SHORTCODES_FOLDER = 'shortcodes';
 	/**
