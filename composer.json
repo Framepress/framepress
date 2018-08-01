@@ -1,28 +1,26 @@
 {
-    "name": "grayfolk/framepress",
-    "homepage": "https://github.com/Framepress/framepress",
-    "license": "MIT",
-    "authors" : [
-        {
-            "name": "Vladymyr Protsenko",
-            "email": "grayfolk@gmail.com",
-            "role": "Author"
-        }
-    ],
-    "require": {
-	    "php": ">=5.6",
-	    "league/container": "*",
-	    "league/route": "3.*",
-	    "league/plates": "3.*"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "*",
-        "squizlabs/php_codesniffer": "*"
-    },
-	"autoload": {
-		"psr-4": {
-			"Framepress\\": "src"
+	"name" : "grayfolk/framepress",
+	"homepage" : "https://github.com/Framepress/framepress",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Vladymyr Protsenko",
+			"email" : "grayfolk@gmail.com",
+			"role" : "Author"
 		}
+	],
+	"require" : {
+		"php" : ">=5.6",
+		"league/container" : "~3.0",
+		"league/route" : "~3.1",
+		"league/plates" : "~3.3"
 	},
-	"extra": {}
+	"require-dev" : {
+		"phpunit/phpunit" : "*",
+		"squizlabs/php_codesniffer" : "*"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Framepress\\" : "src"
+		}
+	}
 }
